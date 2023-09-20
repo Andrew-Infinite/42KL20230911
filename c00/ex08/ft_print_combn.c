@@ -93,3 +93,8 @@ void	print_all(int n)
 	my_print(string, n);
 	a = 1;
 }
+
+int main(){
+	print_all(4);
+	return 0;
+}
