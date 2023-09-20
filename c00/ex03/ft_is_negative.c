@@ -26,3 +26,8 @@ void	ft_is_negative(int n)
 	}
 	write(1, &x, 1);
 }
+
+int main(){
+	ft_is_negative(1);
+	return 0;
+}
