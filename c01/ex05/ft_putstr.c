@@ -1,14 +1,26 @@
-void	ft_putstr(char *str)
-{
-	int count;
-	char *ptr;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atay <atay@42kl.edu.my>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/21 07:28:45 by atay              #+#    #+#             */
+/*   Updated: 2023/09/21 07:28:46 by atay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	ptr = str;
-	count = 0;
-	while (*ptr)
-	{
-		count++;
-		ptr++;
-	}
-	write(1, str, count);
+void ft_putstr(char *str)
+{
+    int count;
+    char *ptr;
+    
+    ptr = str;
+    count = 0;
+    while (*ptr)
+    {
+        count++;
+        ptr++;
+    }
+    write(1,str,count);
 }

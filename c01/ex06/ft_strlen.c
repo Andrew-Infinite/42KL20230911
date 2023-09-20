@@ -1,14 +1,26 @@
-int	ft_strlen(char *str)
-{
-	int	count;
-	char	*ptr;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atay <atay@42kl.edu.my>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/21 07:28:54 by atay              #+#    #+#             */
+/*   Updated: 2023/09/21 07:28:56 by atay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	ptr = str;
-	count = 0;
-	while (*ptr)
-	{
-		count++;
-		ptr++;
-	}
-	return (count);
+int ft_strlen(char *str)
+{
+    int count;
+    char *ptr;
+    
+    ptr = str;
+    count = 0;
+    while (*ptr)
+    {
+        count++;
+        ptr++;
+    }
+    return count;
 }

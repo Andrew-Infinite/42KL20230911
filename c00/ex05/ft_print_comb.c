@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atay <atay@42kl.edu.my>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/20 10:13:16 by atay              #+#    #+#             */
+/*   Updated: 2023/09/20 15:12:48 by atay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	number_printer(int hundreds, int tens, int ones)
@@ -16,28 +28,29 @@ void	number_printer(int hundreds, int tens, int ones)
 		write(1, &comma, 2);
 	}
 }
+
 void	ft_print_comb(void)
 {
-	int i;
-	int j;
-	int k;
+	int	i;
+	int	j;
+	int	k;
+
 	i = 0;
-	j = 1;
-	k = 2;
+	j = 0;
+	k = 0;
 	while (i <= 7)
 	{
+		j = i + 1;
 		while (j <= 8)
 		{
+			k = j + 1;
 			while (k <= 9)
 			{
 				number_printer(i, j, k);
 				k++;
 			}
 			j++;
-			k = j + 1;
 		}
 		i++;
-		j = i + 1;
 	}
-	number_printer(7, 8, 9);
 }

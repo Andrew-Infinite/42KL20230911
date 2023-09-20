@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atay <atay@42kl.edu.my>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 07:29:08 by atay              #+#    #+#             */
-/*   Updated: 2023/09/21 07:29:10 by atay             ###   ########.fr       */
+/*   Created: 2023/09/14 13:19:59 by atay              #+#    #+#             */
+/*   Updated: 2023/09/20 12:59:03 by atay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_rev_int_tab(int *tab, int size)
+#include <unistd.h>
+
+void	ft_print_reverse_alphabet(void)
 {
-    int i;
-    
-    i=-1;
-    while(++i<size/2)
-    {
-        int temp = tab[i];
-        tab[i] = tab[size - i - 1];
-        tab[size - i - 1] = temp;
-    }
+	char	x;
+
+	x = '0';
+	while (x <= '9')
+	{
+		write(1, &x, 1);
+		x++;
+	}
 }
