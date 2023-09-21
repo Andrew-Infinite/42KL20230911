@@ -10,15 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlcpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	length;
 
-	i = -1;
-	while (++i < n)
+	i = 0;
+	while (i < (size - 1) && src[i])
 	{
 		dest[i] = src[i];
+		i++;
 	}
-	dest[n - 1] = '\0';
-	return (dest);
+	length = i;
+	while (i < size)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	dest[size - 1] = '\0';
+	return (length);
 }
