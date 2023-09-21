@@ -10,14 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strlcpy(char *dest, char *src, unsigned int n)
+char	*ft_strlcpy(char *dest, char *src, unsigned int n)
 {
-    int i;
-    i=-1;
-    while(++i<n)
-    {
-        dest[i] = src[i];
-    }
-    dest[n-1]='\0';
-    return dest;
+	int	i;
+
+	i = -1;
+	while (++i < n)
+	{
+		dest[i] = src[i];
+	}
+	dest[n - 1] = '\0';
+	return (dest);
 }
