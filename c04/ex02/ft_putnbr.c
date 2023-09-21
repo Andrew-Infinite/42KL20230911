@@ -14,8 +14,8 @@
 
 void	ft_putnbr(int n)
 {
-		char *special;
-		char neg;
+	char	*special;
+	char	neg;
 	char	x;
 
 	if (n == -2147483648)

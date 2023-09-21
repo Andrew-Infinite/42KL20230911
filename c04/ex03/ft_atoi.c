@@ -10,46 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//NOT DONE
-int isSign(char *str)
+int	is_sign(char str)
 {
-    if(*str == '+' || *str == '-')
-    {
-        return 1;
-    }
-    return 0;
+	if (str == '+' || str == '-')
+	{
+		return (1);
+	}
+	return (0);
 }
 
-int isNumber(char *str)
+int	is_number(char str)
 {
-    if(*str<'0'||*str>'9')
-    {
-        return 0;
-    }
-    return 1;
+	if (str < '0' || str > '9')
+	{
+		return (0);
+	}
+	return (1);
 }
-int str_to_int(char *str, int start, int end, int sign)
+
+int	ft_atoi(char *str)
 {
-    int temp;
-    
-    temp = 0;
-    while(start<end)
-    {
-        temp = temp*10 + sign*(str[start]-'0');
-        start++;
-    }
-    return temp;
-}
-int ft_atoi(char *str)
-{
-    int temp;
-    int sign = 1;
-    while(*str)
-    {
-        if(!isSign(*str) && !isNumber(*str))
-            sign = 1;
-        else if(*str == '-')
-            sign=-sign;
-        str++;
-    }
+	long	temp;
+	int		sign;
+
+	sign = 1;
+	temp = 0;
+	while (*str == ' ')
+		str++;
+	while (is_sign(*str))
+	{
+		if (*str == '-')
+			sign = -sign;
+		str++;
+	}
+	while (is_number(*str))
+	{
+		temp = temp * 10 + sign * (*str - '0');
+		str++;
+	}
+	return (temp);
 }

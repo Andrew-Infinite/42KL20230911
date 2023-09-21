@@ -25,6 +25,6 @@ char	*ft_strstr(char *str, char *to_find)
 		i++;
 	}
 	if (str[i] == '\0' && to_find[i] != '\0')
-		return ((void *)0);
+		return (0);
 	return (str);
 }
