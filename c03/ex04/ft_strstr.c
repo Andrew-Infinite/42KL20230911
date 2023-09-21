@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-    unsigned int i;
+	unsigned int	i;
 
-    i = 0;
-	while(str[i] && to_find[i])
-    {
-        if(str[i] != to_find[i])
-        {
-            i=0;
-            str++;
-        }
+	i = 0;
+	while (str[i] && to_find[i])
+	{
+		if (str[i] != to_find[i])
+		{
+			i = 0;
+			str++;
+		}
 		i++;
-    }
-	if(str[i] == '\0' && to_find[i] != '\0')
-		return ((void *) 0);
-    return str;
+	}
+	if (str[i] == '\0' && to_find[i] != '\0')
+		return ((void *)0);
+	return (str);
 }

@@ -10,23 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//check for the def
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+// check for the def
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-    char *ptr;
-    unsigned int i;
-    
-    i = 0;
-    ptr = dest;
-	while(*ptr)
-        ptr++;
-	
+	char			*ptr;
+	unsigned int	i;
+
+	i = 0;
+	ptr = dest;
+	while (*ptr)
+		ptr++;
 	ptr[nb] = '\0';
-	while(*src && i < nb)
-    {
-        *ptr++ = *src++;
+	while (*src && i < nb)
+	{
+		*ptr++ = *src++;
 		i++;
-    }
-    
-    return dest;
+	}
+	return (dest);
 }

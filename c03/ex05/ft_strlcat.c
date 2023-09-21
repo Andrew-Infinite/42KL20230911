@@ -12,23 +12,22 @@
 
 #include <unistd.h>
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-    char			*ptr;
-    unsigned int	i;
+	char			*ptr;
+	unsigned int	i;
 
-    i=0;
-    ptr = dest;
-    while(*ptr)
-    {
-        ptr++;
-        i++;
-    }
-    while(*src && ++i < size)
-    {
-        *ptr++ = *src++;
-    }
-    dest[size] = '\0';
-
-    return i+1;
+	i = 0;
+	ptr = dest;
+	while (*ptr)
+	{
+		ptr++;
+		i++;
+	}
+	while (*src && ++i < size)
+	{
+		*ptr++ = *src++;
+	}
+	dest[size] = '\0';
+	return (i + 1);
 }
