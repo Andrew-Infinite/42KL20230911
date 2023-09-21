@@ -12,16 +12,19 @@
 
 char *ft_strstr(char *str, char *to_find)
 {
-    int i;
-    
-    i=-1;
-	while(str[++i] && to_find[i])
+    unsigned int i;
+
+    i = 0;
+	while(str[i] && to_find[i])
     {
         if(str[i] != to_find[i])
         {
-            i=-1;
+            i=0;
             str++;
         }
+		i++;
     }
+	if(str[i] == '\0' && to_find[i] != '\0')
+		return ((void *) 0);
     return str;
 }
