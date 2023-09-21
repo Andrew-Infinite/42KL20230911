@@ -23,6 +23,7 @@ char *ft_strstr(char *str, char *to_find)
             str++;
         }
     }
-    
+	if (to_find[0] == '\0')
+		return to_find[0];	
     return str;
 }
