@@ -31,7 +31,7 @@ int	map_init(char *base, int *map, int map_size)
 	count = -1;
 	while (base[++count])
 	{
-		if (base[count] == '+' || base[count] == '-' || map[(int)base[count]] > -1)
+		if (is_sign(base[count]) || map[(int)base[count]] > -1)
 			return (0);
 		map[(int)base[count]] = count;
 	}
