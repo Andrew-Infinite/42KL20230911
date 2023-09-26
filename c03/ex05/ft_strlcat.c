@@ -40,11 +40,11 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		ptr++;
 		i++;
 	}
-	size2  = i + ft_strlen(src);
+	size2 = i + ft_strlen(src);
 	while (*src && ++i < size)
 	{
 		*ptr++ = *src++;
 	}
-	dest[size-1] = '\0';
+	dest[size - 1] = '\0';
 	return (size2);
 }
