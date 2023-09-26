@@ -38,7 +38,7 @@ int	ft_atoi_base(char *str, char *base)
 	temp = 0;
 	size = map_init(base, map, 256);
 	if (size <= 1)
-		return 0;
+		return (0);
 	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	while (is_sign(*str))
