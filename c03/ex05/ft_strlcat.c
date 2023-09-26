@@ -12,10 +12,26 @@
 
 #include <unistd.h>
 
+int	ft_strlen(char *str)
+{
+	int		count;
+	char	*ptr;
+
+	ptr = str;
+	count = 0;
+	while (*ptr)
+	{
+		count++;
+		ptr++;
+	}
+	return (count);
+}
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	char			*ptr;
 	unsigned int	i;
+	unsigned int	size2;
 
 	i = 0;
 	ptr = dest;
@@ -24,10 +40,11 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		ptr++;
 		i++;
 	}
+	size2  = i + ft_strlen(src);
 	while (*src && ++i < size)
 	{
 		*ptr++ = *src++;
 	}
-	dest[size] = '\0';
-	return (i + 1);
+	dest[size-1] = '\0';
+	return (size2);
 }

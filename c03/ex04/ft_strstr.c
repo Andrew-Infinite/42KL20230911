@@ -22,7 +22,8 @@ char	*ft_strstr(char *str, char *to_find)
 			i = 0;
 			str++;
 		}
-		i++;
+		else
+			i++;
 	}
 	if (str[i] == '\0' && to_find[i] != '\0')
 		return (0);
