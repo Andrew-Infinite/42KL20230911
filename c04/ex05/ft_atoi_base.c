@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atay <atay@42kl.edu.my>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/26 16:14:53 by atay              #+#    #+#             */
+/*   Updated: 2023/09/26 16:17:52 by atay             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	is_sign(char str)
 {
 	if (str == '+' || str == '-')
@@ -19,8 +31,7 @@ int	map_init(char *base, int *map, int map_size)
 	count = -1;
 	while (base[++count])
 	{
-		if (base[count] == '+' || base[count] == '-' || map[(int)base[count]] >
-			-1)
+		if (base[count] == '+' || base[count] == '-' || map[(int)base[count]] > -1)
 			return (0);
 		map[(int)base[count]] = count;
 	}
@@ -29,10 +40,10 @@ int	map_init(char *base, int *map, int map_size)
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int temp;
-	int sign;
-	int map[256];
-	int size;
+	int	temp;
+	int	sign;
+	int	map[256];
+	int	size;
 
 	sign = 1;
 	temp = 0;
