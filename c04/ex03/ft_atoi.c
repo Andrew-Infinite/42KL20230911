@@ -35,7 +35,7 @@ int	ft_atoi(char *str)
 
 	sign = 1;
 	temp = 0;
-	while (*str == ' ')
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	while (is_sign(*str))
 	{
