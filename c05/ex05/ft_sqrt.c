@@ -21,3 +21,13 @@ int	ft_sqrt(int nb)
 		return (i);
 	return (0);
 }
+
+// #include <stdio.h>
+// int main (){
+// 	printf("%d \n",ft_sqrt(200));
+// 	printf("%d \n",ft_sqrt(400));
+// 	printf("%d \n",ft_sqrt(0));
+// 	printf("%d \n",ft_sqrt(10));
+// 	printf("%d \n",ft_sqrt(49));
+// 	printf("%d \n",ft_sqrt(-100));
+// }

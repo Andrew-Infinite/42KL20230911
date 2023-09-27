@@ -25,3 +25,11 @@ int	ft_is_prime(int nb)
 	}
 	return (1);
 }
+
+// #include <stdio.h>
+// int main (){
+// 	for(int i = 0; i < 200;i++){
+// 		if (ft_is_prime(i)>0)
+// 			printf("%d, ",i);
+// 	}
+// }

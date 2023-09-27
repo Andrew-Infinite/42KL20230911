@@ -28,7 +28,16 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
-	while (ft_is_prime(nb++) != 1)
-		;
-	return (nb - 1);
+	while (ft_is_prime(nb) != 1)
+		nb++;
+	return (nb);
 }
+
+// #include <stdio.h>
+// int main (){
+// 	printf("%d, ",ft_find_next_prime(0));
+// 	printf("%d, ",ft_find_next_prime(3));
+// 	printf("%d, ",ft_find_next_prime(4));
+// 	printf("%d, ",ft_find_next_prime(103));
+// 	printf("%d, ",ft_find_next_prime(104));
+// }
