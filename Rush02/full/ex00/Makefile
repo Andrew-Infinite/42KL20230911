@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = src/main.c src/print_words.c src/libft.c src/get_words.c src/get_dict.c src/ft_split.c src/check_input.c
 OBJS = $(SRCS:.c=.o)
-NAME = rush02
+NAME = rush-02
 
 all: ${NAME}
 

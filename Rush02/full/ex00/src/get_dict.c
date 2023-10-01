@@ -23,16 +23,16 @@ char	*ft_strndup2(char *src, int size)
 {
 	char	*dest;
 	int		i;
-	int 	j;
+	int		j;
 
 	i = 0;
 	j = 0;
 	dest = (char *)malloc(size + 1);
-	while(src[i] && i < size)
+	while (src[i] && i < size)
 	{
-		if(src[i] != ' ')
+		if (src[i] != ' ')
 			dest[j++] = src[i];
-		else if (i>0 && src[i-1] != ' ')
+		else if (i > 0 && src[i - 1] != ' ')
 			dest[j++] = ' ';
 		i++;
 	}
@@ -42,25 +42,21 @@ char	*ft_strndup2(char *src, int size)
 
 void	copy_line(char *line, t_dict *dict)
 {
-	int		i;
-	int		size;
-	char	**value;
+	int	size;
 
 	while (*line && *line != ':')
 		line++;
 	line++;
-	i = 0;
-	while(isWhitespace(*line))
+	while (is_whitespace(*line))
 		line++;
-	value = ft_split(line," ");
 	size = ft_strlen(line);
-	while (isWhitespace(line[size-1]))
+	while (is_whitespace(line[size - 1]))
 		size--;
-	dict->value = ft_strndup2(line , size);
+	dict->value = ft_strndup2(line, size);
 }
 
 t_dict	**get_dict(char *dict_name)
-{	
+{
 	t_dict	**dict;
 	char	words[1024];
 	char	**dict_array;
@@ -70,18 +66,17 @@ t_dict	**get_dict(char *dict_name)
 	i = 0;
 	if (read(open_file(dict_name), words, sizeof(words)) < 0)
 	{
-		write(1, "Unable to read file\n", 20);
+		write(1, "Dict error, unable to read file\n", 32);
 		return (NULL);
 	}
-	dict_num = count_strings(words,"\n");
+	dict_num = count_strings(words, "\n");
 	dict = (t_dict **)malloc(sizeof(t_dict *) * (100 + 1));
 	dict[100] = NULL;
 	dict_array = ft_split(words, "\n");
 	while (i < dict_num)
-	{	
+	{
 		dict[num_to_index(dict_array[i])] = (t_dict *)malloc(sizeof(t_dict));
-		copy_line(dict_array[i],
-			dict[num_to_index(dict_array[i])]);
+		copy_line(dict_array[i], dict[num_to_index(dict_array[i])]);
 		i++;
 	}
 	free(dict_array);

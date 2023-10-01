@@ -38,15 +38,15 @@ void	blockofoutput(char *nbr, int size, t_dict **dict, int prt_whtsp)
 			rev_i = size - i;
 			if (rev_i == 3)
 			{
-        		get_word_by_map(dict[nbr[i] - '0'], 1);
-        		get_word_by_map(dict[30], 1);
+				get_word_by_map(dict[nbr[i] - '0'], 1);
+				get_word_by_map(dict[30], 1);
 			}
 			else if (rev_i == 2 && nbr[i] > '1')
-                get_word_by_map(dict[(nbr[i] - '0') + 20], 1);
+				get_word_by_map(dict[(nbr[i] - '0') + 20], 1);
 			else if (rev_i == 2 && nbr[i++] == '1')
-                get_word_by_map(dict[10 + (nbr[i] - '0')], prt_whtsp);
+				get_word_by_map(dict[10 + (nbr[i] - '0')], prt_whtsp);
 			else
-        		get_word_by_map(dict[nbr[i] - '0'], prt_whtsp);
+				get_word_by_map(dict[nbr[i] - '0'], prt_whtsp);
 		}
 	}
 }
@@ -58,7 +58,7 @@ void	print_text(char *nbr, int size, t_dict **dict)
 	int	offset;
 
 	if (nbr[0] == '0' && size == 1)
-	{ 
+	{
 		get_word_by_map(dict[0], 1);
 		return ;
 	}
@@ -71,12 +71,11 @@ void	print_text(char *nbr, int size, t_dict **dict)
 		offset = rev_i % 3 + (rev_i % 3 == 0) * 3;
 		if (rev_i > 3)
 		{
-			blockofoutput(&nbr[i], offset, dict,1);
+			blockofoutput(&nbr[i], offset, dict, 1);
 			get_word_by_map(dict[30 + rev_i - offset], 1);
 		}
 		else
-			blockofoutput(&nbr[i], offset, dict,0);
+			blockofoutput(&nbr[i], offset, dict, 0);
 		i += offset;
 	}
-	write(1,"\n",1);
 }

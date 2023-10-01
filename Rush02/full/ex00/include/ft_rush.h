@@ -28,7 +28,7 @@ int		valid_dict(char *str);
 int		valid_input(int ac, char **av);
 void	print_error_message(void);
 void	ft_putstr(char *str);
-int		isWhitespace(char str);
+int		is_whitespace(char str);
 int		num_to_index(char *str);
 char	*ft_strncpy(char *dest, char *src, int size);
 char	*ft_strndup(char *src, int size);

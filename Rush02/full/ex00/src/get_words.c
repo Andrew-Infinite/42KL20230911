@@ -13,7 +13,7 @@
 #include "../include/ft_rush.h"
 
 void	get_word_by_map(t_dict *dict, int i)
-{	
+{
 	ft_putstr(dict->value);
 	if (i == 1)
 	{
@@ -21,49 +21,48 @@ void	get_word_by_map(t_dict *dict, int i)
 	}
 }
 
-int size_with_error(char *str)
+int	size_with_error(char *str)
 {
-	int i;
-	int size;
+	int	i;
+	int	size;
 
 	size = 0;
-	while(str[size] && str[size] != ':')
+	while (str[size] && str[size] != ':')
 		size++;
-	while(isWhitespace(str[size-1]))
+	while (is_whitespace(str[size - 1]))
 		size--;
-
 	i = -1;
-	while(++i < size)
+	while (++i < size)
 	{
-		if(str[i] < '0' || str[i] > '9')
+		if (str[i] < '0' || str[i] > '9')
 			return (-1);
 	}
-	return size;
+	return (size);
 }
 
-int isWhitespace(char str)
+int	is_whitespace(char str)
 {
-	if(str == ' ' || str == 9 || (str >= 11 && str <= 13))
-		return 1;
-	return 0;
+	if (str == ' ' || str == 9 || (str >= 11 && str <= 13))
+		return (1);
+	return (0);
 }
 
-int num_to_index(char *str)
+int	num_to_index(char *str)
 {
-	int size;
+	int	size;
 
-	while (isWhitespace(*str))
+	while (is_whitespace(*str))
 		str++;
 	size = size_with_error(str);
 	if (size <= 0)
 		return (-1);
 	if (size >= 4)
-		return 30 + size - 1;
+		return (30 + size - 1);
 	if (size == 3)
-		return 30;
+		return (30);
 	if (size == 2 && str[0] > '1')
-		return 20 + str[0] - '0';
+		return (20 + str[0] - '0');
 	if (size == 2)
-		return 10 + str[1] - '0';
-	return str[0] - '0';
+		return (10 + str[1] - '0');
+	return (str[0] - '0');
 }

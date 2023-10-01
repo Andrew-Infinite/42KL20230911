@@ -29,7 +29,7 @@ int	is_sep(char c, char *charset)
 }
 
 int	count_strings(char *str, char *charset)
-{	
+{
 	int	i;
 	int	string_count;
 
@@ -37,8 +37,7 @@ int	count_strings(char *str, char *charset)
 	string_count = 0;
 	while (str[i])
 	{
-		if (!is_sep(str[i], charset)
-			&& is_sep(str[i + 1], charset))
+		if (!is_sep(str[i], charset) && is_sep(str[i + 1], charset))
 			string_count++;
 		i++;
 	}
@@ -73,7 +72,7 @@ void	split_strings(char **arrays, char *str, char *charset)
 			i++;
 		}
 		else
-		{	
+		{
 			j = 0;
 			while (!is_sep(str[i + j], charset))
 				j++;
@@ -86,7 +85,7 @@ void	split_strings(char **arrays, char *str, char *charset)
 }
 
 char	**ft_split(char *str, char *charset)
-{	
+{
 	char	**arrays;
 	int		string_count;
 
