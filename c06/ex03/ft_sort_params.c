@@ -61,7 +61,7 @@ int	main(int argc, char *argv[])
 	int	i;
 
 	i = 0;
-	ft_str_sort(argv, argc);
+	ft_str_sort(&argv[1], argc - 1);
 	while (++i < argc)
 	{
 		write(1, argv[i], ft_strlen(argv[i]));
