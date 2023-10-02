@@ -33,18 +33,16 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int	i;
 	unsigned int	size2;
 
-	i = 0;
-	ptr = dest;
-	while (*ptr)
-	{
-		ptr++;
-		i++;
-	}
+	i = ft_strlen(dest);
+	ptr = &dest[i];
 	size2 = i + ft_strlen(src);
-	while (*src && ++i < size)
+	if(size < i)
+		return (size + ft_strlen(src));
+	i = 0;
+	while (*src && ++i < (size-1))
 	{
 		*ptr++ = *src++;
 	}
-	dest[size - 1] = '\0';
+	*ptr = '\0';
 	return (size2);
 }
