@@ -10,24 +10,18 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dest, char *src)
 {
 	unsigned int	i;
 	unsigned int	length;
 
 	i = 0;
-	while (i < (size - 1) && src[i])
+	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	length = i;
-	while (i < size)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	dest[size - 1] = '\0';
 	return (length);
 }
 
@@ -50,10 +44,10 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	length2 = 0;
 	while (++i < (size - 1))
 	{
-		length2 += ft_strlcpy(ptr + length2, strs[i], length);
-		length2 += ft_strlcpy(ptr + length2, sep, length);
+		length2 += ft_strlcpy(ptr + length2, strs[i]);
+		length2 += ft_strlcpy(ptr + length2, sep);
 	}
-	length2 += ft_strlcpy(ptr + length2, strs[i], length);
+	length2 += ft_strlcpy(ptr + length2, strs[i]);
 	ptr[length - 1] = '\0';
 	return (ptr);
 }

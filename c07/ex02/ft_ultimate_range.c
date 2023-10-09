@@ -19,11 +19,13 @@ int	ft_ultimate_range(int **range, int min, int max)
 	if ((max - min) <= 0)
 	{
 		*range = 0;
-		return (-1);
+		return (0);
 	}
 	ptr_num = (int *)malloc((max - min) * sizeof(int));
 	while (min < max)
 		ptr_num[count++] = min++;
 	*range = ptr_num;
+	if (count == 0)
+		return (-1);
 	return (count);
 }
