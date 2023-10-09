@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ft_rush.h": "c",
+        "sstream": "c"
+    }
+}
