@@ -49,6 +49,39 @@ int ft_atoi_sp(char *str,unsigned int **output)
 	return size_output;
 }
 
+char *ft_itoa_sp(unsigned int* nbr, int size_nbr)
+{
+	int size_output = 0;
+
+	if(size_nbr <= 0)
+		return 0;
+
+	for(unsigned int i = nbr[size_nbr - 1]; i > 0; i/=10)
+		size_output++;
+	size_output = size_output + (MAX_UINT_DIGIT) * (size_nbr - 1);
+
+	char *ptr = (char *)malloc((size_output + 1)*sizeof(char));
+
+	int j;
+	ptr[size_output] = '\0';
+	for(int i = 0; i < size_nbr; i++)
+	{
+		j = 0;
+		for(unsigned int num = nbr[i]; num > 0; num/=10)
+		{
+			ptr[--size_output] = (num % 10) + '0';
+			j++;
+		}
+		while(size_output > 0 && j < MAX_UINT_DIGIT)
+		{
+			ptr[--size_output] = '0';
+			j++;
+		}
+	}
+	
+	return ptr;
+}
+
 int hex_mul(unsigned int *a,int size_a,unsigned int *b,int size_b, unsigned int **output)
 {
 	int size = size_a + size_b;

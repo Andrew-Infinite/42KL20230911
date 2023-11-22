@@ -3,38 +3,6 @@
 #include "unistd.h"
 #include "stdio.h"
 
-char *ft_itoa_sp(unsigned int* nbr, int size_nbr)
-{
-	int size_output = 0;
-
-	if(size_nbr <= 0)
-		return 0;
-
-	for(unsigned int i = nbr[size_nbr - 1]; i > 0; i/=10)
-		size_output++;
-	size_output = size_output + (MAX_UINT_DIGIT) * (size_nbr - 1);
-
-	char *ptr = (char *)malloc((size_output + 1)*sizeof(char));
-
-	int j;
-	ptr[size_output] = '\0';
-	for(int i = 0; i < size_nbr; i++)
-	{
-		j = 0;
-		for(unsigned int num = nbr[i]; num > 0; num/=10)
-		{
-			ptr[--size_output] = (num % 10) + '0';
-			j++;
-		}
-		while(size_output > 0 && j < MAX_UINT_DIGIT)
-		{
-			ptr[--size_output] = '0';
-			j++;
-		}
-	}
-	
-	return ptr;
-}
 
 int main (int argc, char *argv[])
 {
